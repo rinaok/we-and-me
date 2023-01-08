@@ -1,7 +1,11 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
-import Swiper from 'react-native-swiper';
+// @ts-ignore
+import Carousel from 'react-native-anchor-carousel';
+import {Dimensions, StyleSheet, TouchableOpacity} from 'react-native';
 import {ExploreCard} from '../UiCard/ExploreCard';
+import {homeCardsData} from '../../../__mocks/home';
+
+const {width: windowWidth} = Dimensions.get('window');
 
 interface CarouselCardProps {
   carouselData?: Array<{
@@ -13,44 +17,34 @@ interface CarouselCardProps {
 }
 
 const CarouselCard = (props: CarouselCardProps) => {
-  const {carouselData, showsPagination} = props;
-  const display =
-    carouselData &&
-    carouselData.map((data, index) => (
-      // <View style={styles.slide}>
-      //   <View style={CardStyle}>
-      //     <ExploreCard title={data.title} />
-      //   </View>
-      // </View>
-      <View style={styles.slide} key={index}>
-        <Text>{data.title}</Text>
-      </View>
-    ));
+  const carouselRef = React.useRef(null);
+  const renderItem = ({item, index}) => {
+    const {image, title} = item;
+    return (
+      <TouchableOpacity
+        style={styles.item}
+        onPress={() => {
+          carouselRef.current.scrollToIndex(index);
+        }}>
+        <ExploreCard source={image} title={title} />
+      </TouchableOpacity>
+    );
+  };
   return (
-    <Swiper
-      showsButtons={false}
-      loop={false}
-      loadMinimal={true}
-      removeClippedSubviews={false}
-      showsPagination={showsPagination}>
-      {display}
-    </Swiper>
+    <Carousel
+      ref={carouselRef}
+      data={homeCardsData}
+      renderItem={renderItem}
+      style={styles.carousel}
+      itemWidth={windowWidth * 0.6}
+      containerWidth={windowWidth}
+      separatorWidth={5}
+    />
   );
 };
 
 const styles = StyleSheet.create({
-  wrapper: {},
-  slide: {
-    width: '30%',
-    margin: 10,
-    // justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#9DD6EB',
-  },
+  carousel: {},
 });
-
-const CardStyle = {
-  width: '100%',
-};
 
 export default CarouselCard;

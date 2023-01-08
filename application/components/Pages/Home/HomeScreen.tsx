@@ -2,6 +2,7 @@ import * as React from 'react';
 import CarouselCard from '../../ui-components/Carousel/CarouselCard';
 import {Text, View} from 'react-native';
 import {homeCardsData} from '../../../__mocks/home';
+import SwiperComponent from '../../ui-components/Carousel/SwiperCard';
 
 // @ts-ignore
 export const HomeScreen = () => {
@@ -15,7 +16,9 @@ export const HomeScreen = () => {
           <CarouselCard carouselData={homeCardsData} showsPagination={false} />
         </View>
       </View>
-      <View style={{flex: 2, margin: 5}}>{/*<CarouselCard />*/}</View>
+      <View style={{flex: 2, margin: 5}}>
+        <SwiperComponent />
+      </View>
       <View style={{flex: 2, margin: 5}}>{/*<CarouselCard />*/}</View>
     </View>
   );
