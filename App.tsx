@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tabs } from "./application/components/Tabs/Tabs";
+import {Tabs} from './application/components/Tabs/Tabs';
 
 const App = () => {
   return (
