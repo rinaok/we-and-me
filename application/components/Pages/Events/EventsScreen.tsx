@@ -1,55 +1,36 @@
 import * as React from 'react';
-import {View, ScrollView} from 'react-native';
+import {View, ScrollView, TouchableOpacity} from 'react-native';
 import {UiCard} from '../../ui-components/UiCard/UiCard';
+import {eventsCardsData} from '../../../__mocks/events';
 
-const EventsScreen = () => {
+// @ts-ignore
+const EventsScreen = ({navigation}) => {
   return (
     <ScrollView style={{flex: 1}}>
       <View style={{flexDirection: 'column', alignItems: 'center'}}>
-        <View style={CardStyle}>
-          <UiCard
-            title={"Noam's Club"}
-            paragraph={
-              'You are welcome to join the event Please check the details section for further information'
-            }
-            subtitle={'BOOKINGS OPENS Tue, 27 Dec, 11:50 am'}
-          />
-        </View>
-        <View style={CardStyle}>
-          <UiCard
-            title={"Alexa's Club"}
-            paragraph={
-              'You are welcome to join the event Please check the details section for further information'
-            }
-            subtitle={'BOOKINGS OPENS Tue, 27 Dec, 11:50 am'}
-          />
-        </View>
-        <View style={CardStyle}>
-          <UiCard
-            title={"Ronaldo's Club"}
-            paragraph={
-              'You are welcome to join the event Please check the details section for further information'
-            }
-            subtitle={'BOOKINGS OPENS Tue, 27 Dec, 11:50 am'}
-          />
-        </View>
-        <View style={CardStyle}>
-          <UiCard
-            title={"Lior's Club"}
-            paragraph={
-              'You are welcome to join the event Please check the details section for further information'
-            }
-            subtitle={'BOOKINGS OPENS Tue, 27 Dec, 11:50 am'}
-          />
-        </View>
+        {eventsCardsData.map(event => {
+          const {image, title, paragraph} = event;
+          return (
+            <TouchableOpacity
+              style={CardStyle}
+              onPress={() =>
+                navigation.navigate('Event', {image, title, paragraph})
+              }>
+              <UiCard
+                title={title}
+                paragraph={paragraph}
+                source={image}
+                subtitle={'BOOKINGS OPENS Tue, 27 Dec, 11:50 am'}
+              />
+            </TouchableOpacity>
+          );
+        })}
       </View>
-      {/*<UiCard title={'This is the title'} paragraph={'bla bla bla'} />*/}
     </ScrollView>
   );
 };
 
 const CardStyle = {
-  width: '99%',
-  padding: 1,
+  padding: 3,
 };
 export default EventsScreen;

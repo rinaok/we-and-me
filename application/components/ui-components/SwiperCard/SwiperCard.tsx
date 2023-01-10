@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const SwiperComponent = () => {
+const SwiperCard = () => {
   return (
     <Swiper style={styles.wrapper}>
       <View style={styles.slide1}>
@@ -46,4 +46,4 @@ const SwiperComponent = () => {
   );
 };
 
-export default SwiperComponent;
+export default SwiperCard;

@@ -5,7 +5,8 @@ import {View} from 'react-native';
 // const LeftContent = leftContentProps => <Avatar.Icon {...leftContentProps} icon="folder" />;
 
 interface WeCardProps {
-  title?: string;
+  title: string;
+  source: any;
   paragraph?: string;
   subtitle?: string;
   LeftContent?: any;
@@ -16,31 +17,27 @@ interface WeCardProps {
 }
 
 export const UiCard = (props: WeCardProps) => {
-  const {title, subtitle, paragraph} = props;
+  const {title, subtitle, paragraph, source} = props;
   return (
     <Card>
       <View style={{flexDirection: 'row', alignItems: 'center'}}>
         <View
           style={{
-            width: '40%',
+            width: '45%',
             padding: 1,
           }}>
-          <Card.Cover source={require('../../../assets/alexa.png')} />
+          <Card.Cover source={source} />
         </View>
         <View
           style={{
-            width: '60%',
+            width: '55%',
             padding: 1,
           }}>
           <Card.Content>
             <Title>{title}</Title>
             <Paragraph>{paragraph}</Paragraph>
           </Card.Content>
-          <Card.Title
-            title={subtitle}
-            subtitle="Card Subtitle"
-            // left={LeftContent}
-          />
+          <Card.Title title={subtitle} />
         </View>
       </View>
     </Card>

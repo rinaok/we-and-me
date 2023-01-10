@@ -13,6 +13,7 @@ import SwitchScreen from '../Pages/Switch/SwitchScreen';
 import ProfileScreen from '../Pages/Profile/ProfileScreen';
 import ChatRoomsScreen from '../Pages/ChatRooms/ChatRoomsScreen';
 import MiaScreen from '../Pages/Mia/MiaScreen';
+import EventScreen from '../Pages/Events/EventScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -73,6 +74,7 @@ function EventsStack() {
       <Stack.Screen name="Switch" component={SwitchScreen} />
       <Stack.Screen name="ChatRooms" component={ChatRoomsScreen} />
       <Stack.Screen name="Mia" component={MiaScreen} />
+      <Stack.Screen name="Event" component={EventScreen} />
     </Stack.Navigator>
   );
 }
