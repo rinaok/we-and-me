@@ -47,7 +47,7 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
   UIView *rootView = RCTAppSetupDefaultRootView(bridge, @"WeAndMe", initProps);
 
   if (@available(iOS 13.0, *)) {
-    rootView.backgroundColor = [UIColor systemBackgroundColor];
+    rootView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1.0];
   } else {
     rootView.backgroundColor = [UIColor whiteColor];
   }
