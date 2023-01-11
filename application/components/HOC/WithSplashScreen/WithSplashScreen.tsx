@@ -59,7 +59,7 @@ export const Splash = ({isAppReady}: {isAppReady: boolean}) => {
     if (state === FADE_OUT) {
       Animated.timing(containerOpacity, {
         toValue: 0,
-        duration: 1200, // Fade out duration
+        duration: 1000, // Fade out duration
         delay: 1000, // Minimum time the logo will stay visible
         useNativeDriver: true,
       }).start(() => {
