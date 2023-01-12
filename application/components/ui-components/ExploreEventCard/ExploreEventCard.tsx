@@ -1,6 +1,5 @@
 import * as React from 'react';
 import {Card, Text} from 'react-native-paper';
-import {Image} from 'react-native';
 
 interface WeCardProps {
   title?: string;
@@ -14,7 +13,7 @@ interface WeCardProps {
   source?: any;
 }
 
-export const ExploreCard = (props: WeCardProps) => {
+export const ExploreEventCard = (props: WeCardProps) => {
   const {source, title} = props;
   return (
     <Card

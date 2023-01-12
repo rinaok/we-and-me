@@ -7,8 +7,14 @@ import {homeCardsData} from '../../../__mocks/home';
 
 const {width: windowWidth} = Dimensions.get('window');
 
-const CarouselCard = () => {
+const CarouselCard = (props: {
+  data?: any;
+  Component?: any;
+  itemWidth?: any;
+}) => {
   const carouselRef = React.useRef(null);
+  // @ts-ignore
+  const Component = props.Component || ExploreCard;
   // @ts-ignore
   const renderItem = ({item, index}) => {
     const {image, title} = item;
@@ -19,18 +25,18 @@ const CarouselCard = () => {
           // @ts-ignore
           carouselRef.current.scrollToIndex(index);
         }}>
-        <ExploreCard source={image} title={title} />
+        <Component source={image} title={title} />
       </TouchableOpacity>
     );
   };
   return (
     <Carousel
       ref={carouselRef}
-      data={homeCardsData}
+      data={props.data || homeCardsData}
       renderItem={renderItem}
-      itemWidth={windowWidth * 0.5}
+      itemWidth={props.itemWidth || windowWidth * 0.5}
       showsHorizontalScrollIndicator={true}
-      containerWidth={windowWidth * 0.9}
+      containerWidth={windowWidth}
     />
   );
 };

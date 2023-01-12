@@ -83,6 +83,15 @@ export const Splash = ({isAppReady}: {isAppReady: boolean}) => {
         style={[style.image, {opacity: imageOpacity}]}
         resizeMode="contain"
       />
+      <Animated.Image
+        source={require('../../../assets/splash/Rectangle 59.png')}
+        fadeDuration={0}
+        // onLoad={() => {
+        //   setState(FADE_IN_IMAGE);
+        // }}
+        style={[style.image1, {opacity: imageOpacity}]}
+        resizeMode="contain"
+      />
     </Animated.View>
   );
 };
@@ -95,6 +104,10 @@ const style = StyleSheet.create({
     justifyContent: 'center',
   },
   image: {
+    width: 120,
+    height: 120,
+  },
+  image1: {
     width: 120,
     height: 120,
   },

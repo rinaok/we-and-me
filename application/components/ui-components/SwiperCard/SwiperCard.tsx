@@ -1,27 +1,17 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 
 import Swiper from 'react-native-swiper';
 
 const styles = StyleSheet.create({
-  wrapper: {},
-  slide1: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#9DD6EB',
+  wrapper: {
+    height: 200,
   },
-  slide2: {
+  slide: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#97CAE5',
-  },
-  slide3: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#92BBD9',
+    backgroundColor: 'rgba(52, 52, 52, 0.8)',
   },
   text: {
     color: '#fff',
@@ -30,18 +20,18 @@ const styles = StyleSheet.create({
   },
 });
 
-const SwiperCard = () => {
+const SwiperCard = (props: {data?: any[]}) => {
+  const dataToShow = props.data || ['Hello Swiper', 'Beautiful', 'And simple'];
   return (
-    <Swiper style={styles.wrapper}>
-      <View style={styles.slide1}>
-        <Text style={styles.text}>Hello Swiper</Text>
-      </View>
-      <View style={styles.slide2}>
-        <Text style={styles.text}>Beautiful</Text>
-      </View>
-      <View style={styles.slide3}>
-        <Text style={styles.text}>And simple</Text>
-      </View>
+    <Swiper style={styles.wrapper} showsHorizontalScrollIndicator={true}>
+      {dataToShow.map(d => {
+        return (
+          <View style={styles.slide}>
+            <Image source={d.image} />
+            <Text style={styles.text}>{d.title}</Text>
+          </View>
+        );
+      })}
     </Swiper>
   );
 };
