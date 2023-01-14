@@ -24,7 +24,7 @@ function HomeStack() {
     <Stack.Navigator
       initialRouteName="Home"
       screenOptions={{
-        headerShown: true,
+        headerShown: false,
         headerBackTitle: 'Back',
       }}>
       <Stack.Screen name="Home" component={HomeScreen} />
