@@ -10,7 +10,7 @@ import {
 // @ts-ignore
 const SwitchScreen = ({navigation}) => {
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={styles.container}>
       <View style={{flex: 1, padding: 16}}>
         <View
           style={{
@@ -63,6 +63,11 @@ const SwitchScreen = ({navigation}) => {
   );
 };
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 16,
+    backgroundColor: 'white',
+  },
   button: {
     alignItems: 'center',
     backgroundColor: '#DDDDDD',

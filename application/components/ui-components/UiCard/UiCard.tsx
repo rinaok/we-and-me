@@ -1,6 +1,6 @@
 import * as React from 'react';
-import {Card, Title, Paragraph} from 'react-native-paper';
-import {View} from 'react-native';
+import { Card, Title, Paragraph } from 'react-native-paper';
+import { View } from 'react-native';
 
 // const LeftContent = leftContentProps => <Avatar.Icon {...leftContentProps} icon="folder" />;
 
@@ -17,10 +17,10 @@ interface WeCardProps {
 }
 
 export const UiCard = (props: WeCardProps) => {
-  const {title, subtitle, paragraph, source} = props;
+  const { title, subtitle, paragraph, source } = props;
   return (
-    <Card>
-      <View style={{flexDirection: 'row', alignItems: 'center'}}>
+    <Card style={{ backgroundColor: 'transparent' }}>
+      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
         <View
           style={{
             width: '45%',
