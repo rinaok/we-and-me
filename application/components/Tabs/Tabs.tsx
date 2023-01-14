@@ -22,7 +22,10 @@ function HomeStack() {
   return (
     <Stack.Navigator
       initialRouteName="Home"
-      screenOptions={{headerShown: false}}>
+      screenOptions={{
+        headerShown: true,
+        headerBackTitle: 'Back',
+      }}>
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Switch" component={SwitchScreen} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
@@ -37,7 +40,7 @@ function SwitchStack() {
   return (
     <Stack.Navigator
       initialRouteName="Switch"
-      screenOptions={{headerShown: false}}>
+      screenOptions={{headerShown: true, headerBackTitleVisible: true}}>
       <Stack.Screen name="Switch" component={SwitchScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
@@ -52,7 +55,7 @@ function ProfileStack() {
   return (
     <Stack.Navigator
       initialRouteName="Profile"
-      screenOptions={{headerShown: false}}>
+      screenOptions={{headerShown: true, headerBackTitleVisible: true}}>
       <Stack.Screen name="Profile" component={ProfileScreen} />
       <Stack.Screen name="Switch" component={SwitchScreen} />
       <Stack.Screen name="Events" component={EventsScreen} />
@@ -67,7 +70,7 @@ function EventsStack() {
   return (
     <Stack.Navigator
       initialRouteName="Events"
-      screenOptions={{headerShown: false}}>
+      screenOptions={{headerShown: true, headerBackTitleVisible: true}}>
       <Stack.Screen name="Events" component={EventsScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
@@ -83,8 +86,8 @@ function ChatRoomsScreenStack() {
   return (
     <Stack.Navigator
       initialRouteName="ChatRooms"
-      screenOptions={{headerShown: false}}>
-      <Stack.Screen name="ChatRooms" component={ChatRoomsScreen} />
+      screenOptions={{headerShown: true, headerBackTitleVisible: true}}>
+      <Stack.Screen name="Chat Rooms" component={ChatRoomsScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
       <Stack.Screen name="Switch" component={SwitchScreen} />
@@ -98,7 +101,7 @@ function MiaScreenStack() {
   return (
     <Stack.Navigator
       initialRouteName="Mia"
-      screenOptions={{headerShown: false}}>
+      screenOptions={{headerShown: true, headerBackTitleVisible: true}}>
       <Stack.Screen name="Mia" component={MiaScreen} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
       <Stack.Screen name="Switch" component={SwitchScreen} />
@@ -148,11 +151,20 @@ export const Tabs = () => {
       <Tab.Navigator
         initialRouteName="Feed"
         screenOptions={({route}) => ({
-          headerStyle: {backgroundColor: '#fff'},
+          headerStyle: {
+            backgroundColor: 'rgba(52, 52, 52, 0.1)',
+            opacity: 0.8,
+            height: 0,
+          },
           headerTintColor: 'black',
           headerTitleStyle: {fontWeight: 'bold'},
           tabBarActiveTintColor: 'purple',
           tabBarInactiveTintColor: 'gray',
+          headerBackButtonMenuEnabled: true,
+          headerShown: true,
+          headerBackTitle: 'back',
+          headerBackTitleVisible: true,
+          headerBackTitleStyle: {color: 'red'},
           tabBarIcon: ({focused, color, size}) => {
             return handleIcon(route.name, focused, size, color);
           },

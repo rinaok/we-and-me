@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import {
   StyleSheet,
   Text,
@@ -6,85 +7,27 @@ import {
   TouchableOpacity,
   Image,
   FlatList,
+  Dimensions,
 } from 'react-native';
+import {chatsData} from '../../../__mocks/chatRooms';
+
+const windowWidth = Dimensions.get('window').width;
 
 const ChatRoomsScreen = () => {
-  const data = [
-    {
-      id: 1,
-      title: 'Lorem ipsum dolor',
-      time: '1 days a go',
-      image: 'https://via.placeholder.com/400x200/0000CD/0000CD',
-    },
-    {
-      id: 2,
-      title: 'Sit amet, consectetuer',
-      time: '2 minutes a go',
-      image: 'https://via.placeholder.com/400x200/48D1CC/48D1CC',
-    },
-    {
-      id: 3,
-      title: 'Dipiscing elit. Aenean ',
-      time: '3 hour a go',
-      image: 'https://via.placeholder.com/400x200/AFEEEE/AFEEEE',
-    },
-    {
-      id: 4,
-      title: 'Commodo ligula eget dolor.',
-      time: '4 months a go',
-      image: 'https://via.placeholder.com/400x200/191970/191970',
-    },
-    {
-      id: 5,
-      title: 'Aenean massa. Cum sociis',
-      time: '5 weeks a go',
-      image: 'https://via.placeholder.com/400x200/4682B4/4682B4',
-    },
-    {
-      id: 6,
-      title: 'Natoque penatibus et magnis',
-      time: '6 year a go',
-      image: 'https://via.placeholder.com/400x200/DDA0DD/DDA0DD',
-    },
-    {
-      id: 7,
-      title: 'Dis parturient montes, nascetur',
-      time: '7 minutes a go',
-      image: 'https://via.placeholder.com/400x200/B0E0E6/B0E0E6',
-    },
-    {
-      id: 8,
-      title: 'Ridiculus mus. Donec quam',
-      time: '8 days a go',
-      image: 'https://via.placeholder.com/400x200/87CEEB/87CEEB',
-    },
-    {
-      id: 9,
-      title: 'Felis, ultricies nec, pellentesque',
-      time: '9 minutes a go',
-      image: 'https://via.placeholder.com/400x200/4682B4/4682B4',
-    },
-  ];
-
-  const [posts, setPosts] = useState(data);
-
   return (
     <View style={styles.container}>
       <FlatList
         style={styles.list}
-        data={posts}
-        keyExtractor={item => {
-          return item.id;
-        }}
+        data={chatsData}
         ItemSeparatorComponent={() => {
           return <View style={styles.separator} />;
         }}
-        renderItem={post => {
-          const item = post.item;
+        renderItem={chatData => {
+          const item = chatData.item;
           return (
             <TouchableOpacity>
               <View style={styles.card}>
-                <Image style={styles.cardImage} source={{uri: item.image}} />
+                <Image style={styles.cardImage} source={item.image} />
                 <View style={styles.cardContent}>
                   <View>
                     <Text style={styles.title}>{item.title}</Text>
@@ -95,37 +38,14 @@ const ChatRoomsScreen = () => {
                     <View style={styles.socialBarContainer}>
                       <View style={styles.socialBarSection}>
                         <TouchableOpacity style={styles.socialBarButton}>
-                          <Image
-                            style={styles.icon}
-                            source={{
-                              uri: 'https://img.icons8.com/color/70/000000/filled-like.png',
-                            }}
+                          <AntDesign
+                            name={'message1'}
+                            color={'white'}
+                            size={22}
                           />
-                          <Text style={styles.socialBarLabel}>78</Text>
-                        </TouchableOpacity>
-                      </View>
-
-                      <View style={styles.socialBarSection}>
-                        <TouchableOpacity style={styles.socialBarButton}>
-                          <Image
-                            style={styles.icon}
-                            source={{
-                              uri: 'https://img.icons8.com/ios-glyphs/75/ffffff/comments.png',
-                            }}
-                          />
-                          <Text style={styles.socialBarLabel}>25</Text>
-                        </TouchableOpacity>
-                      </View>
-
-                      <View style={styles.socialBarSection}>
-                        <TouchableOpacity style={styles.socialBarButton}>
-                          <Image
-                            style={styles.icon}
-                            source={{
-                              uri: 'https://img.icons8.com/material/50/ffffff/retweet.png',
-                            }}
-                          />
-                          <Text style={styles.socialBarLabel}>13</Text>
+                          <Text style={styles.newMessages}>
+                            {item.newMessages}
+                          </Text>
                         </TouchableOpacity>
                       </View>
                     </View>
@@ -143,19 +63,17 @@ const ChatRoomsScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 20,
   },
   list: {
-    backgroundColor: '#E6E6E6',
+    backgroundColor: '#ffffff',
   },
   separator: {
-    marginTop: 1,
+    marginTop: 0.5,
   },
   /******** card **************/
   card: {
     margin: 0,
     borderRadius: 2,
-    borderWidth: 1,
     borderColor: '#DCDCDC',
     backgroundColor: '#DCDCDC',
   },
@@ -173,7 +91,6 @@ const styles = StyleSheet.create({
     //overlay efect
     flex: 1,
     height: 200,
-    width: null,
     position: 'absolute',
     zIndex: 100,
     left: 0,
@@ -190,8 +107,8 @@ const styles = StyleSheet.create({
   },
   cardImage: {
     flex: 1,
-    height: 150,
-    width: null,
+    height: 170,
+    width: windowWidth,
   },
   /******** card components **************/
   title: {
@@ -204,6 +121,7 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: '#ffffff',
     marginTop: 5,
+    fontWeight: '700',
   },
   icon: {
     width: 25,
@@ -221,10 +139,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flex: 1,
   },
-  socialBarlabel: {
+  newMessages: {
     marginLeft: 8,
     alignSelf: 'flex-start',
     justifyContent: 'center',
+    fontWeight: '700',
+    fontSize: 16,
     color: '#ffffff',
   },
   socialBarButton: {
@@ -233,6 +153,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
-
 
 export default ChatRoomsScreen;

@@ -13,7 +13,7 @@ const post = {
 };
 
 // @ts-ignore
-const EventScreen = ({route}) => {
+const EventScreen = ({route, navigation}) => {
   const {image, title, paragraph} = route.params;
   return (
     <View style={styles.container}>

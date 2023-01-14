@@ -26,7 +26,7 @@ const SwiperCard = (props: {data?: any[]}) => {
     <Swiper style={styles.wrapper} showsHorizontalScrollIndicator={true}>
       {dataToShow.map(d => {
         return (
-          <View style={styles.slide}>
+          <View style={styles.slide} key={d.title}>
             <Image source={d.image} />
             <Text style={styles.text}>{d.title}</Text>
           </View>
