@@ -95,7 +95,6 @@ const styles = StyleSheet.create({
     zIndex: 100,
     left: 0,
     right: 0,
-    backgroundColor: 'transparent',
   },
   cardFooter: {
     flexDirection: 'row',

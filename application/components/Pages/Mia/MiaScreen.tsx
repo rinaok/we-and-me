@@ -8,10 +8,10 @@ import {
 } from 'react-native';
 
 // @ts-ignore
-const MiaScreen = ({navigation}) => {
+const MiaScreen = ({ navigation }) => {
   return (
-    <SafeAreaView style={{flex: 1}}>
-      <View style={{flex: 1, padding: 16}}>
+    <SafeAreaView style={styles.container}>
+      <View style={{ flex: 1, padding: 16 }}>
         <View
           style={{
             flex: 1,
@@ -63,6 +63,11 @@ const MiaScreen = ({navigation}) => {
   );
 };
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 16,
+    backgroundColor: 'white',
+  },
   button: {
     alignItems: 'center',
     backgroundColor: '#DDDDDD',

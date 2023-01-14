@@ -21,7 +21,6 @@ export const ExploreCard = (props: WeCardProps) => {
       style={{
         height: '80%',
         width: '100%',
-        backgroundColor: 'rgba(52, 52, 52, 0.8)',
       }}>
       <Card.Cover
         source={source}
