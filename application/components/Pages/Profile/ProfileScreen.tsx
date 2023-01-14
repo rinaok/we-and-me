@@ -20,7 +20,7 @@ const ProfileScreen = () => {
       <View style={styles.header}>
         <Image
           style={styles.photo}
-          source={require('../../../assets/noam-profile.png')}
+          source={require('../../../assets/profiles/noam-profile.png')}
         />
         <Text style={styles.name}>{name}</Text>
         <Text style={styles.title}>{occupation}</Text>

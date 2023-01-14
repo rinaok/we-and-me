@@ -15,7 +15,7 @@ export const HomeScreen = () => {
       <View style={{ flex: 2 }}>
         <BackgroundVideo />
       </View>
-      <View style={{ flex: 2 }}>
+      <View>
         <View style={{ flex: 2, margin: 10 }}>
           <View style={{ marginBottom: 5 }}>
             <Text style={{ fontSize: 24, fontWeight: '700' }}>Explore We&Me</Text>
@@ -33,12 +33,22 @@ export const HomeScreen = () => {
               Explore We&Me Events
             </Text>
           </View>
-          <View>
-            <CarouselCard
-              data={eventsCardsData}
-              Component={ExploreEventCard}
-              itemWidth={windowWidth}
-            />
+          <View style={{ flex: 2, marginTop: 5 }}>
+            <SwiperCard data={apartmentsData} />
+          </View>
+          <View style={{ flex: 2, margin: 10 }}>
+            <View style={{ marginBottom: 5 }}>
+              <Text style={{ fontSize: 24, fontWeight: '700' }}>
+                Explore We&Me Events
+              </Text>
+            </View>
+            <View>
+              <CarouselCard
+                data={eventsCardsData}
+                Component={ExploreEventCard}
+                itemWidth={windowWidth}
+              />
+            </View>
           </View>
         </View>
       </View>

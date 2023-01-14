@@ -13,7 +13,8 @@ import {chatsData} from '../../../__mocks/chatRooms';
 
 const windowWidth = Dimensions.get('window').width;
 
-const ChatRoomsScreen = () => {
+// @ts-ignore
+const ChatRoomsScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <FlatList
@@ -24,8 +25,12 @@ const ChatRoomsScreen = () => {
         }}
         renderItem={chatData => {
           const item = chatData.item;
+          const params = {
+            ...item,
+          };
           return (
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('Chat', params)}>
               <View style={styles.card}>
                 <Image style={styles.cardImage} source={item.image} />
                 <View style={styles.cardContent}>
