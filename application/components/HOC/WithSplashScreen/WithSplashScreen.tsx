@@ -45,7 +45,7 @@ export const Splash = ({isAppReady}: {isAppReady: boolean}) => {
     if (state === FADE_IN_IMAGE) {
       Animated.timing(imageOpacity, {
         toValue: 1,
-        duration: 1200, // Fade in duration
+        duration: 10, // Fade in duration
         useNativeDriver: true,
       }).start(() => {
         setState(WAIT_FOR_APP_TO_BE_READY);
@@ -58,7 +58,7 @@ export const Splash = ({isAppReady}: {isAppReady: boolean}) => {
       if (isAppReady) {
         setState(FADE_OUT);
         interval = setInterval(() => {
-          setResizeImage(resizeImage => resizeImage + 2);
+          setResizeImage(resizeImage => resizeImage + 9);
         }, 20);
       }
     }
@@ -68,8 +68,8 @@ export const Splash = ({isAppReady}: {isAppReady: boolean}) => {
     if (state === FADE_OUT) {
       Animated.timing(containerOpacity, {
         toValue: 0,
-        duration: 8000, // Fade out duration
-        delay: 8000, // Minimum time the logo will stay visible
+        duration: 4500, // Fade out duration
+        delay: 2000, // Minimum time the logo will stay visible
         useNativeDriver: true,
       }).start(() => {
         clearInterval(interval);
@@ -80,18 +80,18 @@ export const Splash = ({isAppReady}: {isAppReady: boolean}) => {
 
   if (state === HIDDEN) return null;
 
-  const initialWidthSize = windowWidth / 2 + 200;
+  const initialWidthSize = windowWidth + 200;
   const width =
     initialWidthSize - resizeImage > windowWidth / 2
       ? initialWidthSize - resizeImage
       : windowWidth / 2;
-  const initialHeightSizeLeft = windowHeight / 3 + 200;
+  const initialHeightSizeLeft = windowHeight / 3;
   const heightLeft =
     initialHeightSizeLeft - resizeImage > windowHeight / 3
       ? initialHeightSizeLeft - resizeImage
       : windowHeight / 3;
 
-  const initialHeightSizeRight = windowHeight / 2 + 200;
+  const initialHeightSizeRight = windowHeight;
   const heightRight =
     initialHeightSizeRight - resizeImage > windowHeight / 2
       ? initialHeightSizeRight - resizeImage
@@ -118,7 +118,6 @@ export const Splash = ({isAppReady}: {isAppReady: boolean}) => {
                 height: heightLeft,
                 opacity: imageOpacity,
               }}
-              resizeMode="contain"
             />
           </View>
           <View style={style.imageViewColumn1}>
@@ -130,7 +129,6 @@ export const Splash = ({isAppReady}: {isAppReady: boolean}) => {
                 height: heightLeft,
                 opacity: imageOpacity,
               }}
-              resizeMode="contain"
             />
           </View>
           <View style={style.imageViewColumn1}>
@@ -142,10 +140,10 @@ export const Splash = ({isAppReady}: {isAppReady: boolean}) => {
                 height: heightLeft,
                 opacity: imageOpacity,
               }}
-              resizeMode="contain"
             />
           </View>
         </View>
+
         <View
           style={{
             flexDirection: 'column',
@@ -153,46 +151,41 @@ export const Splash = ({isAppReady}: {isAppReady: boolean}) => {
             height: windowHeight,
             position: 'absolute',
             top: 0,
+            left: windowWidth / 2,
           }}>
           <View
             style={{
               position: 'absolute',
               top: 0,
-              height: windowHeight / 2,
-              ...style.imageViewColumn2,
             }}>
             <Animated.Image
               source={require('../../../assets/splash/People2.png')}
               fadeDuration={0}
               style={{
+                height: heightRight + 10,
                 width,
-                height: windowHeight / 2,
                 opacity: imageOpacity,
               }}
-              resizeMode="contain"
             />
           </View>
           <View
             style={{
               position: 'absolute',
-              top: windowHeight / 2,
-              left: windowWidth / 2,
-              height: windowHeight / 2,
-              ...style.imageViewColumn2,
+              top: windowHeight / 2 - 30,
             }}>
             <Animated.Image
               source={require('../../../assets/splash/People3.png')}
               fadeDuration={0}
               style={{
-                width,
-                height: windowHeight / 2,
                 opacity: imageOpacity,
+                height: heightRight + 60,
+                width,
               }}
-              resizeMode="contain"
             />
           </View>
         </View>
       </View>
+
       <View style={{position: 'absolute'}}>
         <Animated.Image
           source={require('../../../assets/Logo.png')}
@@ -226,6 +219,6 @@ const style = StyleSheet.create({
     height: windowHeight / 3,
   },
   imageViewColumn2: {
-    width: windowWidth / 2,
+    width: '50%',
   },
 });
