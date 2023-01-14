@@ -15,7 +15,7 @@ export const HomeScreen = () => {
       <View style={{ flex: 2 }}>
         <BackgroundVideo />
       </View>
-      <View>
+      <View style={{ flex: 2 }}>
         <View style={{ flex: 2, margin: 10 }}>
           <View style={{ marginBottom: 5 }}>
             <Text style={{ fontSize: 24, fontWeight: '700' }}>Explore We&Me</Text>
