@@ -12,7 +12,7 @@ const EventsScreen = ({ navigation }) => {
           const { image, title, paragraph } = event;
           return (
             <TouchableOpacity
-              style={styles.cardStyle}
+              style={styles.card}
               onPress={() =>
                 navigation.navigate('Event', { image, title, paragraph })
               }>
@@ -36,8 +36,7 @@ const styles = StyleSheet.create({
     padding: 16,
     backgroundColor: 'white',
   },
-  cardStyle: {
-    padding: 3,
+  card: {
   },
 });
 
