@@ -104,7 +104,7 @@ function MiaScreenStack() {
     <Stack.Navigator
       initialRouteName="Mia"
       screenOptions={{headerShown: true, headerBackTitleVisible: true}}>
-      <Stack.Screen name="Mia" component={MiaScreen} />
+      <Stack.Screen name="Create Mia Profile" component={MiaScreen} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
       <Stack.Screen name="Switch" component={SwitchScreen} />
       <Stack.Screen name="Events" component={EventsScreen} />
