@@ -1,7 +1,8 @@
 import * as React from 'react';
-import {View, ScrollView, TouchableOpacity, StyleSheet} from 'react-native';
-import {UiCard} from '../../ui-components/UiCard/UiCard';
-import {eventsCardsData} from '../../../__mocks/events';
+import {View, ScrollView, TouchableOpacity} from 'react-native';
+import {UiCard} from '../../../ui-components/UiCard/UiCard';
+import {eventsCardsData} from '../../../../__mocks/events';
+import {styles} from './EventsScreen.styles';
 
 // @ts-ignore
 const EventsScreen = ({navigation}) => {
@@ -29,15 +30,5 @@ const EventsScreen = ({navigation}) => {
     </ScrollView>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 16,
-    backgroundColor: 'white',
-  },
-  card: {
-  },
-});
 
 export default EventsScreen;

@@ -8,12 +8,12 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from '../Pages/Home/HomeScreen';
-import EventsScreen from '../Pages/Events/EventsScreen';
+import EventsScreen from '../Pages/Events/EventsScreen/EventsScreen';
 import SwitchScreen from '../Pages/Switch/SwitchScreen';
 import ProfileScreen from '../Pages/Profile/ProfileScreen';
 import ChatRoomsScreen from '../Pages/ChatRooms/ChatRoomsScreen';
 import MiaScreen from '../Pages/Mia/MiaScreen';
-import EventScreen from '../Pages/Events/EventScreen';
+import EventScreen from '../Pages/Events/EventScreen/EventScreen';
 import ChatScreen from '../ui-components/ChatScreen/ChatScreen';
 
 const Stack = createNativeStackNavigator();

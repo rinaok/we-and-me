@@ -2,7 +2,7 @@ import React from 'react';
 // @ts-ignore
 import Carousel from 'react-native-anchor-carousel';
 import {Dimensions, StyleSheet, TouchableOpacity} from 'react-native';
-import {ExploreCard} from '../ExploreCard/ExploreCard';
+import {ExploreCard} from '../Explore/ExploreCard/ExploreCard';
 import {homeCardsData} from '../../../__mocks/home';
 
 const {width: windowWidth} = Dimensions.get('window');
