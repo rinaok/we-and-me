@@ -21,6 +21,7 @@
       font-size: 60px;
       margin-bottom: 20px;
       text-transform: uppercase;
+      color: #ffffff;
     }
 
     p {
@@ -46,6 +47,7 @@
     .iframe-container {
       max-width: 100%;
       overflow: hidden;
+      margin-bottom: 40px;
     }
 
     .iframe-container iframe {
@@ -70,25 +72,89 @@
 
     .email {
       font-size: 24px;
+      color: #ffffff;
+      display: inline-block;
+      padding: 5px 10px;
+      border: 2px solid #ffffff;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .email:hover {
+      background-color: rgba(255, 255, 255, 0.2);
     }
 
     .logo {
-      max-width: 200px;
-      margin-bottom: 20px;
+      max-width: 400px;
+      width: 100%;
+      margin-bottom: 40px;
     }
+
+    /* Additional Styles */
+    .media-section {
+      margin-bottom: 40px;
+      border: 2px solid #ffffff;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+    }
+
+    .media-section h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .goal-section {
+      margin-bottom: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .goal-section h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .youtube-video {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 40px;
+    }
+
+    .contact-section {
+      margin-top: 50px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .contact-section h2 {
+      font-size: 30px;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
   </style>
 </head>
 <body>
   <div class="container">
     <img class="logo" src="./logo.webp" alt="We and Me Logo">
-    <h1>We and Me</h1>
     <p>We & Me is a global real-estate company that promotes rental accommodation to member tenants through co-living to combine both a luxurious lifestyle with community-based living, adding value (and income) through its unique concept of social networking.</p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/jTi3v9QAx1s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    <p><strong>OUR GOAL</strong></p>
-    <p>Our goal is to combine professional and social living in one place so that our member tenants will get to enjoy global facilities, such as access to an open workspace, a cinema room, and gyms.</p>
-    <div class="iframe-container">
+    <div class="media-section">
       <h2>IN THE MEDIA</h2>
-      <iframe src="https://kosovapress.com/en/the-portuguese-businessman-intends-to-start-a-multi-million-dollar-project-in-kosovo/" frameborder="0" width="100%" height="500px"></iframe>
+      <div class="iframe-container">
+        <iframe src="https://kosovapress.com/en/the-portuguese-businessman-intends-to-start-a-multi-million-dollar-project-in-kosovo/" frameborder="0" width="100%" height="500px"></iframe>
+      </div>
+    </div>
+    <div class="goal-section">
+      <h2>OUR GOAL</h2>
+      <p>Our goal is to combine professional and social living in one place so that our member tenants will get to enjoy global facilities, such as access to an open workspace, a cinema room, and gyms.</p>
+    </div>
+    <div class="youtube-video">
+      <iframe width="560" height="315" src="https://youtu.be/OkSgHV_HoyM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
     <div class="contact-section">
       <h2>CONTACT US</h2>
