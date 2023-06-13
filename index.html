@@ -38,6 +38,20 @@
       background-color: #e3e3e3;
     }
 
+    .media-section,
+    .goal-section,
+    .youtube-video,
+    .contact-section {
+      transition: transform 0.3s ease;
+    }
+
+    .media-section:hover,
+    .goal-section:hover,
+    .youtube-video:hover,
+    .contact-section:hover {
+      transform: scale(1.05);
+    }
+
     .media-section {
       margin-bottom: 40px;
       border: 2px solid #ffffff;
@@ -103,43 +117,21 @@
       border: 2px solid #ffffff;
       border-radius: 4px;
       transition: background-color 0.3s ease;
-      text-decoration: none;
     }
 
     .email:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-    }
-
-    .logo {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 40px;
-    }
-
-    @media screen and (max-width: 480px) {
-      p {
-        font-size: 40px;
-        margin-bottom: 20px;
-      }
-
-      .media-section h2,
-      .goal-section h2,
-      .contact-section h2 {
-        font-size: 40px;
-      }
-
-      .email {
-        font-size: 40px;
-      }
+      background-color: #ffffff;
+      color: #3F1054;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <img class="logo" src="./logo.webp" alt="We and Me Logo">
+    <h1>We and Me</h1>
     <p>We & Me is a global real-estate company that promotes rental accommodation to member tenants through co-living to combine both a luxurious lifestyle with community-based living, adding value (and income) through its unique concept of social networking.</p>
     <div class="youtube-video">
-      <iframe src="https://www.youtube.com/embed/OkSgHV_HoyM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/OkSgHV_HoyM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
     <div class="goal-section">
       <h2>OUR GOAL</h2>
@@ -152,7 +144,7 @@
     <div class="contact-section">
       <h2>CONTACT US</h2>
       <p>For any inquiries, please reach out to us:</p>
-      <p class="email"><a href="mailto:management@weandme.net">management@weandme.net</a></p>
+      <p class="email">Email: <a href="mailto:management@weandme.net">management@weandme.net</a></p>
     </div>
   </div>
 </body>
