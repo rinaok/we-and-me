@@ -18,14 +18,14 @@
     }
 
     h1 {
-      font-size: 60px;
+      font-size: 40px;
       margin-bottom: 20px;
       text-transform: uppercase;
       color: #ffffff;
     }
 
     p {
-      font-size: 20px;
+      font-size: 16px;
       margin-bottom: 30px;
     }
 
@@ -44,53 +44,6 @@
       background-color: #e3e3e3;
     }
 
-    .iframe-container {
-      max-width: 100%;
-      overflow: hidden;
-      margin-bottom: 40px;
-    }
-
-    .iframe-container iframe {
-      width: 100%;
-      height: 500px;
-      border: none;
-    }
-
-    .contact-section {
-      margin-top: 50px;
-    }
-
-    .contact-section h2 {
-      font-size: 30px;
-      margin-bottom: 10px;
-    }
-
-    .contact-section p {
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
-
-    .email {
-      font-size: 24px;
-      color: #ffffff;
-      display: inline-block;
-      padding: 5px 10px;
-      border: 2px solid #ffffff;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-    }
-
-    .email:hover {
-      background-color: rgba(255, 255, 255, 0.2);
-    }
-
-    .logo {
-      max-width: 400px;
-      width: 100%;
-      margin-bottom: 40px;
-    }
-
-    /* Additional Styles */
     .media-section {
       margin-bottom: 40px;
       border: 2px solid #ffffff;
@@ -100,7 +53,7 @@
     }
 
     .media-section h2 {
-      font-size: 30px;
+      font-size: 24px;
       margin-bottom: 20px;
       color: #ffffff;
     }
@@ -113,7 +66,7 @@
     }
 
     .goal-section h2 {
-      font-size: 30px;
+      font-size: 24px;
       margin-bottom: 20px;
       color: #ffffff;
     }
@@ -132,11 +85,31 @@
     }
 
     .contact-section h2 {
-      font-size: 30px;
+      font-size: 24px;
       margin-bottom: 20px;
       color: #ffffff;
     }
 
+    .email {
+      font-size: 18px;
+      color: #ffffff;
+      display: inline-block;
+      padding: 5px 10px;
+      border: 2px solid #ffffff;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .email:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .logo {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 40px;
+    }
   </style>
 </head>
 <body>
@@ -145,21 +118,19 @@
     <p>We & Me is a global real-estate company that promotes rental accommodation to member tenants through co-living to combine both a luxurious lifestyle with community-based living, adding value (and income) through its unique concept of social networking.</p>
     <div class="media-section">
       <h2>IN THE MEDIA</h2>
-      <div class="iframe-container">
-        <iframe src="https://kosovapress.com/en/the-portuguese-businessman-intends-to-start-a-multi-million-dollar-project-in-kosovo/" frameborder="0" width="100%" height="500px"></iframe>
-      </div>
+      <a href="https://kosovapress.com/en/the-portuguese-businessman-intends-to-start-a-multi-million-dollar-project-in-kosovo/" target="_blank" rel="noopener noreferrer">Click here to read the article</a>
     </div>
     <div class="goal-section">
       <h2>OUR GOAL</h2>
       <p>Our goal is to combine professional and social living in one place so that our member tenants will get to enjoy global facilities, such as access to an open workspace, a cinema room, and gyms.</p>
     </div>
     <div class="youtube-video">
-      <iframe width="560" height="315" src="https://youtu.be/OkSgHV_HoyM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <a href="https://youtu.be/OkSgHV_HoyM" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/OkSgHV_HoyM/maxresdefault.jpg" alt="YouTube Video"></a>
     </div>
     <div class="contact-section">
       <h2>CONTACT US</h2>
       <p>For any inquiries, please reach out to us:</p>
-      <p class="email">Email: <a href="mailto:management@weandme.net">management@weandme.net</a></p>
+      <p><a href="mailto:management@weandme.net" class="email">management@weandme.net</a></p>
     </div>
   </div>
 </body>
