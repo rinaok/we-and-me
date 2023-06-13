@@ -8,6 +8,7 @@
       background-color: #3F1054;
       color: white;
       font-family: Arial, sans-serif;
+      line-height: 1.5;
     }
 
     .container {
@@ -25,7 +26,7 @@
     }
 
     p {
-      font-size: 16px;
+      font-size: 20px;
       margin-bottom: 30px;
     }
 
@@ -72,9 +73,20 @@
     }
 
     .youtube-video {
-      max-width: 100%;
-      height: auto;
+      position: relative;
+      padding-bottom: 56.25%;
+      padding-top: 25px;
+      height: 0;
       margin-bottom: 40px;
+      overflow: hidden;
+    }
+
+    .youtube-video iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
 
     .contact-section {
@@ -110,22 +122,45 @@
       height: auto;
       margin-bottom: 40px;
     }
+    
+    @media screen and (max-width: 480px) {
+      h1 {
+        font-size: 32px;
+      }
+
+      p {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      .media-section h2,
+      .goal-section h2,
+      .contact-section h2 {
+        font-size: 20px;
+      }
+
+      .email {
+        font-size: 16px;
+        padding: 4px 8px;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <img class="logo" src="./logo.webp" alt="We and Me Logo">
-    <p>We & Me is a global real-estate company that promotes rental accommodation to member tenants through co-living to combine both a luxurious lifestyle with community-based living, adding value (and income) through its unique concept of social networking.</p>
-    <div class="media-section">
-      <h2>IN THE MEDIA</h2>
-      <a href="https://kosovapress.com/en/the-portuguese-businessman-intends-to-start-a-multi-million-dollar-project-in-kosovo/" target="_blank" rel="noopener noreferrer">Click here to read the article</a>
+    <h1>We and Me</h1>
+    <p>We & Me is a global real estate company that promotes rental accommodation to member tenants through co-living, combining a luxurious lifestyle with community-based living. We add value (and income) through our unique concept of social networking.</p>
+    <div class="youtube-video">
+      <iframe src="https://www.youtube.com/embed/OkSgHV_HoyM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="goal-section">
       <h2>OUR GOAL</h2>
-      <p>Our goal is to combine professional and social living in one place so that our member tenants will get to enjoy global facilities, such as access to an open workspace, a cinema room, and gyms.</p>
+      <p>Our goal is to combine professional and social living in one place so that our member tenants can enjoy global facilities such as access to open workspaces, cinema rooms, and gyms.</p>
     </div>
-    <div class="youtube-video">
-      <a href="https://youtu.be/OkSgHV_HoyM" target="_blank" rel="noopener noreferrer"><img src="https://img.youtube.com/vi/OkSgHV_HoyM/maxresdefault.jpg" alt="YouTube Video"></a>
+    <div class="media-section">
+      <h2>IN THE MEDIA</h2>
+      <a href="https://kosovapress.com/en/the-portuguese-businessman-intends-to-start-a-multi-million-dollar-project-in-kosovo/" target="_blank" rel="noopener noreferrer">Click here to read the article</a>
     </div>
     <div class="contact-section">
       <h2>CONTACT US</h2>
